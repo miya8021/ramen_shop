@@ -21,13 +21,13 @@ class Shop
   def sell(user, item)
     puts "#{item.name}ですね。#{item.price}円になります"
 
-    add_money = 1000
+    add_money = user.money + 1000
     if item.price < 3000 
       puts "#{user.money}円頂戴します。\nお釣りは #{user.money - item.price}円です"
     elsif item.price == 3000
       puts "ちょうど頂戴します。"      
     else
-      puts "#{add_money + user.money}円頂戴いたします。\nお釣りは #{add_money + user.money - item.price}円です"
+      puts "#{add_money}円頂戴いたします。\nお釣りは #{add_money - item.price}円です"
     end 
     puts "ゆっくり#{item.name}を召し上がって下さい"
   end
